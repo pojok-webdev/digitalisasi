@@ -1,2 +1,0 @@
-# digitalisasi
-digitalisasi

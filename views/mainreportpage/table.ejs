@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report | <%- title -%></title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <style>
+    table.inputs td {
+        padding: 5px;
+    }
+  </style>
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <%- include('leftnavbar') -%>
+    <!-- Right navbar links -->
+    <%- include('rightnavbar') -%>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/mainreportpage" class="brand-link">
+      <img src="/assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Main Report Page</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="/assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">PadiOdoo</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+
+      <!-- Sidebar Menu -->
+      <%- include('sidebarmenu') -%>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1><%= title %></h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/">Report</a></li>
+              <li class="breadcrumb-item active"><%= title %></li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <!-- /.card -->
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">DataTable with default features</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                    <% columns.forEach(col=>{ %>
+                      <th><%- col -%></th>
+                    <% }) %>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.1.0
+    </div>
+    <strong>Copyright &copy; 2011-2024 <a href="https://database.padinet.com">PadiApp</a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+<%- include(modals) -%>
+<!-- jQuery -->
+<script src="/assets/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="/assets/plugins/jszip/jszip.min.js"></script>
+<script src="/assets/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="/assets/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="/assets/plugins/moment/moment.min.js"></script>
+<script src="/assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/assets/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/assets/dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script src="/js/libs/dates.js"></script>
+<script>
+  $(function () {
+    console.log('path',"<%- path -%>")
+    datas = $("#example1").DataTable({
+      dom:'Bfrtip',
+      ajax:"<%- path -%>",
+      "responsive": true,
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "destroy":true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+      "responsive": true,
+      "columnDefs": [ 
+      {
+        "targets":0,
+        "className":'zero'
+      },
+      {
+        "targets":1,
+        "className":'one'
+      },
+      {
+        "targets":2,
+        "className":'two'
+      },
+      {
+        "targets":3,
+        "className":'three'
+      },
+      {
+        "targets":4,
+        "className":'four'
+      },
+
+    ],
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+
+
+    $('#tanggalawalfilterterbuka').datetimepicker({
+      format: 'L'
+    })
+    $('#tanggalakhirfilterterbuka').datetimepicker({
+      format: 'L'
+    });
+    notEmpty = obj => {
+      out = true
+      obj.elems.forEach(elem=>{
+        if(elem.val()===""){
+          out = false
+        }
+      })
+    }
+    $('#btnDoFilterTerbuka').click(function(){
+      if(notEmpty({elems:[]})){}
+      tanggalawal = extractDate({
+        srcval:$('#tanggalawalfilterterbuka input').val(),
+        srcpattern:'m/d/Y',
+        dstpattern:'Y-m-d'
+      })
+      tanggalakhir = extractDate({
+        srcval:$('#tanggalakhirfilterterbuka input').val(),
+        srcpattern:'m/d/Y',
+        dstpattern:'Y-m-d'
+      })
+      $("#example1").DataTable().destroy()
+      reload({
+        ajax:{
+          'url':'/getdata',
+          'type':'post',
+          'data':{
+            filter:{
+              ticketstart:tanggalawal,
+              ticketend:tanggalakhir,
+              type:'laporanticketterbuka'
+            }
+          }
+        }
+      })
+    })
+    $('#example1').on('click','tbody tr td',function(){
+      console.log('klik value',$(this).html())
+      console.log('klik className',$(this).attr('class'))
+    })
+  });
+</script>
+<script>
+  reload = obj => {
+    datas = $("#example1").DataTable({
+      dom:'Bfrtip',
+      ajax:obj.ajax,
+      "responsive": true,
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "destroy":true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+      "responsive": true,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    console.log('reload obj',obj)
+  }
+</script>
+<script>
+  $('#btnFilter').click(function(){
+    console.log('btnFilter clicked')
+    $('#filterharian').modal()
+  })
+</script>
+</body>
+</html>

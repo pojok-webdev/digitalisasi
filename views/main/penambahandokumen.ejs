@@ -7,7 +7,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="/uploader" method="post"  enctype="multipart/form-data" id="myuploader">
+        <form action="/uploadist" method="post"  enctype="multipart/form-data" id="myuploader">
         <div class="modal-body">
             
             <!--start-->
@@ -26,7 +26,7 @@
                       <!-- /.form-group -->
                       <div class="form-group">
                         <label>Judul</label>
-                        <input type="text" class="form-control" >
+                        <input type="text" name="judul" class="form-control" >
                       </div>
                       <!-- /.form-group -->
                     </div>
@@ -34,12 +34,12 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>Tgl Terbit</label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="tglterbit" class="form-control">
                       </div>
                       <!-- /.form-group -->
                       <div class="form-group">
                         <label>Tgl Kedaluwarsa</label>
-                        <input type="text" class="form-control">
+                        <input type="text"  name="tglkedaluwarsa" class="form-control">
                       </div>
                       <!-- /.form-group -->
                     </div>
@@ -50,7 +50,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Keterangan</label>
-                            <textarea name="" id="" cols="100" rows="10" class="form-control" ></textarea>
+                            <textarea name="keterangan" id="" cols="100" rows="10" class="form-control" ></textarea>
                           </div>    
                     </div>
                   </div>

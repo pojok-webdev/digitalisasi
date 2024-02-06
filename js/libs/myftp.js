@@ -1,6 +1,6 @@
 const ftp = require('basic-ftp')
 async function send(obj){
-    console.log('Obj received',obj)
+    //console.log('Obj received',obj)
     const client = new ftp.Client()
     client.ftp.verbose = true
     try{
@@ -10,7 +10,7 @@ async function send(obj){
             password:obj.password,
             secure:false
         })
-        console.log(await client.list())
+        //console.log(await client.list())
         await client.uploadFrom(obj.src,obj.dst)
     }
     catch(err){

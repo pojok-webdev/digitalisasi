@@ -19,6 +19,7 @@ fs = require('fs'),
 myftp = require('./libs/myftp'),
 basicftp = require('basic-ftp'),
 path = require('path'),
+//myftp = require('./testftp')
 listRoute = require('./listRoute')
 app.set('views', './views');
 app.set('view engine','ejs')

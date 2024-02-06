@@ -31,30 +31,20 @@ i.app.get('/tables',(req,res)=>{
 })
 i.app.post('/uploader',(req,res)=>{
   params = req.body
-  //const myfile = req.files.file
   form = new i.formidable.IncomingForm()
   console.log('req',params)
-  //res.send(params)
   form.parse(req,function(err,fields,files){
     if(err){
       next(err)
       return
     }
-    console.log('fields',fields)
-    console.log('files',files)
-   
-    /*i.fs.rename(files.upload[0].filepath,'~/iniloh.png',err=>{
-      if(err)throw(err)
-      console.log('Success upload')
-    })*/
     res.json({fields,files})
   })
   form.on('file',function(field,files){
     console.log('files2',files)
     
-    i.fs.rename(files.filepath,'iniloh.png',err=>{
+    i.fs.rename(files.filepath,'ituloh.png',err=>{
       console.log("err",err)
-      //if(err)throw(err)
     })
   })
   form.on('end',function(){
@@ -63,7 +53,7 @@ i.app.post('/uploader',(req,res)=>{
 })
 i.app.get('/testmove',(req,res)=>{
   fs = i.fs
-  fs.rename('/home/klien/www/jsserver/digitalisasi/indexx.js','/home/klien/www/jsserver/digitalisasi/hehe.png',function(err){
+  fs.rename('/home/klien/www/jsserver/digitalisasi/catatan.txt','/home/klien/www/jsserver/digitalisasi/heiho.png',function(err){
     console.log('err',err)
   })
 })
@@ -72,6 +62,15 @@ i.app.get('/testupload',(req,res)=>{
 })
 i.app.get('/tesftp',(req,res)=>{
   i.myftp.send(i.setting.ftp)
+})
+i.app.get('/movetolavender/:dstname',(req,res)=>{
+  params = req.params
+  i.myftp.send({
+    host:i.setting.ftp.host,
+    user:i.setting.ftp.user,
+    password:i.setting.ftp.password,
+    src:'iniloh.png',dst:'/homes/puji/'+params.dstname
+  })
 })
 i.app.listen(i.setting.port,_=>{
       console.log('Digitalisasi start at port ',i.setting.port)

@@ -1,5 +1,6 @@
 const ftp = require('basic-ftp')
 async function send(obj){
+    console.log('Obj received',obj)
     const client = new ftp.Client()
     client.ftp.verbose = true
     try{

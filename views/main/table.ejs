@@ -281,6 +281,27 @@
   $('#btnAdd').click(function(){
     $('#mpenambahandokumen').modal()
   })
+  $('#btnSaveChanges').click(function(){
+    console.log('save changes')
+    form = $('#myuploader')[0]
+    data = new FormData(form)
+    $.ajax({
+      url:'/uploader',
+      type:'post',
+      dataType:'json',
+      data:data,
+      cache: false,
+      enctype: 'multipart/form-data',
+      contentType:false,
+      processData: false
+    })
+    .done(res=>{
+      console.log('save res',res)
+    })
+    .fail(err=>{
+      console.log('err save',err)
+    })
+  })
 </script>
 </body>
 </html>

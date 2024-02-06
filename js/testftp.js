@@ -10,7 +10,7 @@ async function example(){
             secure:false
         })
         console.log(await client.list())
-        await client.uploadFrom('iniloh.png','/homes/puji/okde.png')
+        await client.uploadFrom('iniloh.png','/homes/puji/teslagi.png')
         //await client.downloadTo('','')
     }
     catch(err){

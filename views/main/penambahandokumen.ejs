@@ -7,8 +7,9 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+        <form action="/uploader" method="post"  enctype="multipart/form-data" id="myuploader">
         <div class="modal-body">
-          
+            
             <!--start-->
             <div class="card card-default">
                 <div class="card-body">
@@ -62,13 +63,15 @@
                 </div>
                 <!-- /.card-body -->
 
-              </div>
-                  <!--end-->
+            </div>
+            <!--end-->
+          
         </div>
         <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary" id="btnSaveChanges">Save changes</button>
         </div>
+      </form>
       </div>
       <!-- /.modal-content -->
     </div>

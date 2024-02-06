@@ -1,0 +1,14 @@
+curl -X POST '192.168.0.117:20242/testmove'
+
+
+function loadImage1(evt){
+		var input = evt.target;
+		var filereader = new FileReader();
+		filereader.onload = function(){
+			resizeImage(filereader.result, function(result){
+				$("#output").attr("src",result);
+				$("#addImage").val(result);
+			})
+		}
+		filereader.readAsDataURL(input.files[0]);
+	}

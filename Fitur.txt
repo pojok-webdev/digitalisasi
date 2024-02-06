@@ -1,0 +1,5 @@
+- Kolom: deskripsi, tgl terbit, tgl expired
+- Filter bisa dikombinasikan
+- filter expired
+- dokumen yg masuk kategori dlm 3 bulan expired "blinking"
+- yg sudah expired baris berwarna merah.

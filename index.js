@@ -72,7 +72,8 @@ i.app.post('/uploadist', (req, res, next) => {
         src:files.upload[0].originalFilename,
         dst:'/homes/puji/'+files.upload[0].originalFilename
       })
-			return res.send("Successfully uploaded")
+//			return res.send("Successfully uploaded")
+        res.render('/tables')
 		})
 	})
 })
